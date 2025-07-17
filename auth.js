@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
           skoolInviteSent: false
         });
 
-        alert('Signed up! You will receive a Skool invite.');
+        alert('✅ Signed up! You’ll receive your Skool invite shortly.');
       } catch (err) {
         console.error('Signup error:', err.message);
-        alert('Error: ' + err.message);
+        alert('❌ Error: ' + err.message);
       }
     });
   }
@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const doc = await db.collection('users').doc(user.uid).get();
 
         if (doc.exists && doc.data().isPaid) {
-          alert('Login successful — access granted!');
+          alert('✅ Login successful. Welcome back!');
         } else {
-          alert('You need to complete your payment on Skool to access the platform.');
+          alert('🚧 You need to pay on Skool before you can access full features.');
         }
       } catch (err) {
         console.error('Login error:', err.message);
-        alert('Error: ' + err.message);
+        alert('❌ Error: ' + err.message);
       }
     });
   }
